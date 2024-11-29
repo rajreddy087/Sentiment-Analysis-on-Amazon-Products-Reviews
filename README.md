@@ -1,61 +1,47 @@
 # Sentiment-Analysis-on-Amazon-Food-Reviews
 
-## 📜 Overview
-This project performs sentiment analysis on Amazon food product reviews to understand customer sentiments and extract actionable insights. Using natural language processing (NLP) techniques, the analysis reveals trends in customer satisfaction, highlights key themes in reviews, and suggests areas for improvement for sellers.
 
----
+This project performs sentiment analysis on product reviews using the VADER Sentiment tool and various preprocessing steps to clean and analyze customer feedback. It provides insights into customer sentiments and visualizations of frequent words in both positive and negative reviews.
 
-## 🔍 Key Features
-- **Sentiment Classification**: Categorized reviews as Positive, Negative, or Neutral using TextBlob.
-- **Data Visualization**: Insights presented with word clouds, bar charts, and time-series trends.
-- **NLP Techniques**:
-  - Tokenization and Lemmatization.
-  - Sentiment scoring for review polarity.
-  - Keyword extraction from positive and negative sentiments.
-- **Actionable Insights**: Identified common pain points and high-performing products.
+## Dataset
 
----
+The dataset contains 1004 product reviews, with the following columns:
+- **Id**: Unique identifier for each review
+- **ProductId**: Identifier for the product
+- **UserId**: Identifier for the user who posted the review
+- **ProfileName**: Name of the user
+- **HelpfulnessNumerator**: Number of users who found the review helpful
+- **HelpfulnessDenominator**: Total number of users who viewed the review
+- **Score**: Rating score from 1 to 5
+- **Time**: Time the review was posted
+- **Summary**: Summary of the review
+- **Text**: Full review text
 
-## 📊 Dataset
-- **Source**: Amazon Food Reviews dataset (Kaggle or public repositories).
-- **Size**: ~500,000 reviews including fields such as `ReviewText`, `Summary`, `Rating`, and `Helpful`.
+## Preprocessing Steps
+1. **Lowercasing**: Converts all text to lowercase.
+2. **Punctuation Removal**: Removes all non-alphanumeric characters.
+3. **Stopword Removal**: Removes common stopwords (e.g., "and", "the").
+4. **Lemmatization**: Reduces words to their base form (e.g., "running" to "run").
+5. **Spelling Correction**: Fixes spelling errors in the text.
 
----
+## Sentiment Analysis
+Sentiment analysis is performed using the **VADER Sentiment** library, which categorizes sentiment into:
+- **Negative**: Sentiment score for negativity.
+- **Neutral**: Sentiment score for neutrality.
+- **Positive**: Sentiment score for positivity.
+- **Compound**: Overall sentiment score, ranging from -1 (negative) to 1 (positive).
 
-## 🛠️ Tools and Libraries
-- **Python**: Core programming language.
-- **Libraries**:
-  - Pandas and NumPy for data manipulation.
-  - TextBlob for sentiment analysis.
-  - Matplotlib and Seaborn for visualizations.
-  - WordCloud for keyword visualization.
-- **Jupyter Notebook**: Used for project implementation.
+The analysis generates word clouds for both positive and negative reviews, helping to identify common themes and words used by customers in their reviews.
 
----
+## Insights
+- **Most Positive Reviews**: Products with a score of 5 receive the most positive feedback.
+- **Most Negative Reviews**: Products with a score of 1 and 2 receive the most negative feedback, which could be valuable for identifying issues with products.
+- **Frequent Terms in Reviews**: Wordclouds show the most frequent terms in both positive and negative reviews, offering a quick visual summary of customer sentiments.
 
-## 🚀 Implementation Steps
-1. **Data Preprocessing**:
-   - Removed stop words, punctuations, and non-alphanumeric characters.
-   - Performed tokenization and lemmatization.
-2. **Sentiment Analysis**:
-   - Used TextBlob for polarity scoring to classify sentiments.
-   - Created visualizations of sentiment distributions.
-3. **Insights Extraction**:
-   - Analyzed the impact of review length on sentiment.
-   - Identified trends and recurring themes in customer feedback.
-4. **Visualization**:
-   - Word clouds for common positive and negative keywords.
-   - Sentiment distribution and top product reviews.
-5. **Reporting**:
-   - Created actionable insights for sellers and stakeholders.
+## Requirements
+- Python 3.x
+- Libraries: `pandas`, `matplotlib`, `seaborn`, `nltk`, `textblob`, `vaderSentiment`, `wordcloud`
 
----
-
-## 📈 Sample Insights
-- Positive reviews often highlight packaging quality, taste, and prompt delivery.
-- Negative sentiments commonly stem from late delivery, damaged products, or inaccurate descriptions.
-- Seasonal spikes in reviews correspond to holiday periods, indicating high sales volumes.
-
----
-
-
+## Usage
+1. Clone this repository.
+2. Install the required libraries by running: 
