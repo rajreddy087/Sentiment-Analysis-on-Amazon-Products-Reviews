@@ -3,7 +3,7 @@
 
 This project performs sentiment analysis on product reviews using the VADER Sentiment tool and various preprocessing steps to clean and analyze customer feedback. It provides insights into customer sentiments and visualizations of frequent words in both positive and negative reviews.
 
-## Dataset
+# Dataset
 
 The dataset contains 1004 product reviews, with the following columns:
 - **Id**: Unique identifier for each review
