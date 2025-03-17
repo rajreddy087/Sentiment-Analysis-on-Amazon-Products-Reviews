@@ -1,4 +1,4 @@
-# Sentiment-Analysis-on-Amazon-Food-Reviews
+# Sentiment-Analysis-on-Amazon-Products-Reviews
 
 
 This project performs sentiment analysis on product reviews using the VADER Sentiment tool and various preprocessing steps to clean and analyze customer feedback. It provides insights into customer sentiments and visualizations of frequent words in both positive and negative reviews.
